@@ -1,3 +1,12 @@
+html{
+    --bg:#fff;
+    --card-color:#DCDCDC;
+    --color-headings:#4747FF;
+    --color-button: #ffffffc9;
+    --color-text:#000;
+}
+
+
 body {
     width: 100vw;
     height: 100vh;
@@ -9,10 +18,15 @@ body {
     justify-content: center;
     align-items: center;
 
-    font-family: "Barlow";
+    background-color: var(--bg);
+
+    transition: all 425ms;
 
 }
 
+*{
+    font-family: "Barlow";
+}
 
 .container {
     width: 60vw;
@@ -25,7 +39,7 @@ body {
 section {
     width: 250px;
     height: 370px;
-    background-color: gainsboro;
+    background-color: var(--card-color);
     border-radius: 10px;
 
     position: relative;
@@ -34,7 +48,7 @@ section {
 }
 
 #title {
-    color: rgb(71, 71, 255);
+    color: var(--color-headings);
     position: absolute;
     top: 0px;
     left: 0px;
@@ -54,7 +68,73 @@ button {
 
     border-radius: 6px;
     border: none;
+    background-color: var(--color-button);
 
     font-size: medium;
     font-weight: 600;
+    color: var(--color-text);
+}
+
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 90px;
+    height: 40px;
+    background-color: #707070;
+    border-radius: 25px;
+
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 15px;
+    cursor: pointer;
+
+    transition: all 400ms;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+
+    position: absolute;
+    top: 5px;
+    left: 5px;
+
+    transition: all 400ms;
+
+}
+
+input[type="checkbox"]:checked{
+    content: "";
+    
+    background: linear-gradient(91deg, #ff01a5d4, #4b00ffd4)
+}
+
+input[type="checkbox"]::after{
+    content: "OFF";
+    color: #707070; 
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    position: absolute;
+    left: 10px;
+    top: 13px;
+
+    transition: 400ms;
+}
+
+
+input[type="checkbox"]:checked::before{
+    background-color: #000;
+    left: 55px;
+}
+
+input[type="checkbox"]:checked::after{
+    content: "ON";
+    color: #fff; 
+    left: 63px;
+    
 }
