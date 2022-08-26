@@ -24,6 +24,7 @@ const lightMode = {
     colorHeadings: getStyle(html, "--color-headings"),
     colorButton: getStyle(html, "--color-button"),
     colorText: getStyle(html, "--color-text"),
+    boxShadow: getStyle(html, "--box-shadow")
 
 }
 
@@ -33,6 +34,7 @@ const darkMode = {
     colorHeadings: "#6200ffd4",
     colorButton: "#09080fbd",
     colorText: "#fff",
+    boxShadow: "0 -15px 15px rgba(10, 10, 50, 0.5), inset 0 -15px 15px rgba(10, 10, 50, 0.3), 0 15px 15px rgba(10, 10, 50, 0.5), inset 0 -15px 15px rgba(10, 10, 50, 0.3)",
 }
 
 const transformKey = key => "--" + key.replace(/([A-Z])/, "-$1").toLowerCase()
